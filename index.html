@@ -289,18 +289,18 @@ button{font:inherit;color:inherit;border:0;background:none}
 .badge b{color:var(--brand-600);font-weight:800}
 .badge__dot{width:8px;height:8px;border-radius:50%;background:var(--positive);flex:none;box-shadow:0 0 0 3px var(--positive-100)}
 
-.hero h1{margin-block:var(--s-5) 0;max-width:16ch}
+.hero h1{margin-block:var(--s-5) 0;max-width:16ch;line-height:1.18}
 /* Destaque que sobrevive à quebra de linha (sem nowrap, sem estouro lateral) */
 .hero h1 .hl{
   color:var(--brand-600);
   background-image:linear-gradient(var(--brand-100),var(--brand-100));
   background-repeat:no-repeat;
-  background-position:0 88%;
-  background-size:0% .30em;
+  background-position:0 78%;
+  background-size:0% .2em;
   -webkit-box-decoration-break:clone;box-decoration-break:clone;
   animation:swipe var(--dur-4) var(--ease) .35s forwards;
 }
-@keyframes swipe{to{background-size:100% .30em}}
+@keyframes swipe{to{background-size:100% .2em}}
 .hero__lead{font-size:var(--fs-lead);color:var(--ink-500);margin-top:var(--s-5);max-width:52ch}
 .hero .btn-row{margin-top:var(--s-7)}
 
@@ -661,7 +661,7 @@ a.info__item:hover{border-color:var(--brand-600);transform:translateX(3px);box-s
   .draw{stroke-dashoffset:0}
   .bar-fill{transform:scaleY(1)}
   .dot-pop{opacity:1;transform:none}
-  .hero h1 .hl{background-size:100% .30em;animation:none}
+  .hero h1 .hl{background-size:100% .2em;animation:none}
 }
 
 /* ==========================================================================
