@@ -204,9 +204,9 @@ button{font:inherit;color:inherit;border:0;background:none}
 
 .brand{display:inline-flex;align-items:center;gap:10px;min-height:var(--tap)}
 .brand__mark{width:34px;height:34px;flex:none}
-.brand__name{font-size:1.0625rem;font-weight:800;color:var(--ink-900);letter-spacing:-.02em;line-height:1}
+.brand__name{font-size:1.375rem;font-weight:800;color:var(--ink-900);letter-spacing:-.02em;line-height:1}
 .brand__name em{font-style:normal;color:var(--brand-600)}
-.brand__tag{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);margin-top:3px}
+.brand__tag{display:block;font-size:7px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-500);margin-top:2px}
 
 .nav-toggle{
   width:var(--tap);height:var(--tap);display:inline-flex;align-items:center;justify-content:center;
@@ -256,6 +256,25 @@ button{font:inherit;color:inherit;border:0;background:none}
 .hero__grid{position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none;
   -webkit-mask-image:linear-gradient(180deg,#000,transparent 78%);
   mask-image:linear-gradient(180deg,#000,transparent 78%);
+}
+/* Vídeo de fundo do hero — tratado em duotone com as cores da marca */
+.hero__video-wrap{
+  position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;
+  isolation:isolate;opacity:.22;
+  -webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);
+  mask-image:linear-gradient(180deg,#000,transparent 70%);
+}
+.hero__video{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:grayscale(1) contrast(1.1);
+}
+.hero__video-wrap::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(160deg,var(--ink-900) 0%,var(--brand-700) 58%,var(--brand-600) 100%);
+  mix-blend-mode:color;
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__video-wrap{display:none}
 }
 .hero .wrap{position:relative;z-index:1}
 .hero__inner{display:grid;gap:var(--s-8)}
@@ -792,6 +811,11 @@ a.info__item:hover{border-color:var(--brand-600);transform:translateX(3px);box-s
      HERO
      ========================================================================== -->
 <section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="hero__video-wrap" aria-hidden="true">
+    <video class="hero__video" autoplay muted loop playsinline>
+      <source src="assets/hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
   <svg class="hero__grid" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1440 720">
     <defs>
       <pattern id="p-grid" width="44" height="44" patternUnits="userSpaceOnUse">
@@ -1136,7 +1160,7 @@ a.info__item:hover{border-color:var(--brand-600);transform:translateX(3px);box-s
           width="660" height="595" loading="lazy" decoding="async">
         <figure class="about__quote">
           <p>&#8220;&#128640;Desde 2016, referência em contabilidade consultiva. Por @alyssoncoliveira + de 20 anos de experiência.&#8221;</p>
-          <cite>Bio oficial no Instagram @acontabil_contabilidade</cite>
+          <cite>@acontabil_contabilidade</cite>
         </figure>
       </div>
 
